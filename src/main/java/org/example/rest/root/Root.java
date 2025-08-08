@@ -8,9 +8,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Root {
     @Id
     private Long id;
+    private int treeHeight;
 
-    private short height = 0;
-    private Node rootNode = new Node();
+    private Node rootNode;
+
+    public Root(Node rootNode, int treeHeight){
+        this.rootNode = rootNode;
+        this.treeHeight = treeHeight;
+    }
 
     public Long getId(){
         return id;
@@ -19,11 +24,11 @@ public class Root {
         this.id = id;
     }
 
-    public short getHeight(){
-        return height;
+    public int getTreeHeight(){
+        return treeHeight;
     }
-    public void setHeight(short height){
-        this.height = height;
+    public void setHeight(int treeHeight){
+        this.treeHeight = treeHeight;
     }
 
     public Node getRootNode(){
