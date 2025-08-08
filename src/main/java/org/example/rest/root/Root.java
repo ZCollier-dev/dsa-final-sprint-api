@@ -7,9 +7,29 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Root {
     @Id
-    Long id;
+    private Long id;
 
-    double value;
-    Node left;
-    Node right;
+    private short height = 0;
+    private Node rootNode = new Node();
+
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
+
+    public short getHeight(){
+        return height;
+    }
+    public void setHeight(short height){
+        this.height = height;
+    }
+
+    public Node getRootNode(){
+        return rootNode;
+    }
+    public void setRootNode(Node rootNode){
+        this.rootNode = rootNode;
+    }
 }
