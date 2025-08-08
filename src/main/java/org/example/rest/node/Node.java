@@ -1,11 +1,34 @@
 package org.example.rest.node;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
 public class Node {
-    double value;
-    Node left;
-    Node right;
+    private Double value;
+    private Node left;
+    private Node right;
+
+    public Node(){
+        value = null;
+        left = null;
+        right = null;
+    }
+
+    public Double getValue(){
+        return value;
+    }
+    public void setValue(Double value){
+        this.value = value;
+    }
+
+    public Node getLeft(){
+        return left;
+    }
+    public void setLeft(Node left){
+        this.left = left;
+    }
+
+    public Node getRight(){
+        return right;
+    }
+    public void setRight(Node right){
+        this.right = right;
+    }
 }
