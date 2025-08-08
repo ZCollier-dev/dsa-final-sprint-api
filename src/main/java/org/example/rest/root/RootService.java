@@ -36,7 +36,7 @@ public class RootService {
             }
         }
 
-        return rootRepo.save(new Root(rootNode, maxHeight));
+        return rootRepo.save(new Root(rootNode, maxHeight, numberList));
     }
 
     // Creates a new tree from a list of numbers - Balanced Tree, AVL
@@ -58,6 +58,6 @@ public class RootService {
             }
         }
 
-        return rootRepo.save(new Root(rootNode, maxHeight));
+        return rootRepo.save(new Root(rootNode, maxHeight, numberList));
     }
 }
