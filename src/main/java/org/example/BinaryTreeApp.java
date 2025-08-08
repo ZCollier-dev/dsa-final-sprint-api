@@ -18,7 +18,7 @@ This route should:
     ▪ Returns the tree as a JSON representation
     ▪ Stores both the input numbers and resulting tree structure in a database of your choice
 Display previous trees using route /previous-trees
-This rout should:
+This route should:
     ▪ Retrieve and display the input numbers from the database
     ▪ Retrieve their corresponding tree structures from the database
 Include at least three unit tests for your application.

@@ -4,17 +4,21 @@ import org.example.rest.node.Node;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document
 public class Root {
     @Id
     private Long id;
     private int treeHeight;
+    private List<Double> inputNumbers;
 
     private Node rootNode;
 
-    public Root(Node rootNode, int treeHeight){
+    public Root(Node rootNode, int treeHeight, List<Double> inputNumbers){
         this.rootNode = rootNode;
         this.treeHeight = treeHeight;
+        this.inputNumbers = inputNumbers;
     }
 
     public Long getId(){
@@ -27,8 +31,15 @@ public class Root {
     public int getTreeHeight(){
         return treeHeight;
     }
-    public void setHeight(int treeHeight){
+    public void setTreeHeight(int treeHeight){
         this.treeHeight = treeHeight;
+    }
+
+    public List<Double> getInputNumbers(){
+        return inputNumbers;
+    }
+    public void setInputNumbers(List<Double> inputNumbers){
+        this.inputNumbers = inputNumbers;
     }
 
     public Node getRootNode(){
