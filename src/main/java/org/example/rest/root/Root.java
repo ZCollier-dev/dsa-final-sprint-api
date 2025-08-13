@@ -1,18 +1,25 @@
 package org.example.rest.root;
 
+import org.bson.types.ObjectId;
 import org.example.rest.node.Node;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
 @Document
 public class Root {
     @Id
-    private Long id;
+    private String id;
+
+    @Field("treeHeight")
     private int treeHeight;
+
+    @Field("inputNumbers")
     private List<Double> inputNumbers;
 
+    @Field("rootNode")
     private Node rootNode;
 
     public Root(Node rootNode, int treeHeight, List<Double> inputNumbers){
@@ -21,10 +28,10 @@ public class Root {
         this.inputNumbers = inputNumbers;
     }
 
-    public Long getId(){
+    public String getId(){
         return id;
     }
-    public void setId(Long id){
+    public void setId(String id){
         this.id = id;
     }
 

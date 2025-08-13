@@ -19,18 +19,15 @@ public class RootService {
 
     // Creates a new tree from a list of numbers - Basic BST
     public Root createTreeFromList(List<Double> numberList){
-        if (numberList.isEmpty()){
+        if (numberList.isEmpty() || numberList == null){
             return null;
         }
-        int listLength = numberList.size();
-        int listMiddle = listLength / 2;
-        int maxHeight = 0;
+        int maxHeight = -1;
         int newHeight;
         Node rootNode = new Node();
-        rootNode.setValue(numberList.get(listMiddle - 1));
 
-        for (int i = 0; i < listMiddle; i++) {
-            newHeight = rootNode.addNode(numberList.get(i));
+        for (Double number : numberList) {
+            newHeight = rootNode.addNode(number);
             if (maxHeight < newHeight){
                 maxHeight = newHeight;
             }
@@ -41,20 +38,16 @@ public class RootService {
 
     // Creates a new tree from a list of numbers - Balanced Tree, AVL
     public Root createBalancedTreeFromList(List<Double> numberList){
-        if (numberList.isEmpty()){
+        if (numberList.isEmpty() || numberList == null){
             return null;
         }
-        int listLength = numberList.size();
-        int listMiddle = listLength / 2;
-        int maxHeight = 0;
-        int newHeight;
+        int maxHeight = -1;
         Node rootNode = new Node();
-        rootNode.setValue(numberList.get(listMiddle - 1));
 
-        for (int i = 0; i < listMiddle; i++) {
-            newHeight = rootNode.addNodeBalance(numberList.get(i));
-            if (maxHeight < newHeight){
-                maxHeight = newHeight;
+        for (Double number : numberList) {
+            rootNode = rootNode.addNodeBalance(number);
+            if (maxHeight < rootNode.getHeight()){
+                maxHeight = rootNode.getHeight();
             }
         }
 
