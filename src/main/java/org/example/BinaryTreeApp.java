@@ -28,8 +28,12 @@ Return a balanced binary search tree to the user (optional)
 DATABASE USED: MongoDB (because that seems easiest to store trees in)
 */
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class BinaryTreeApp {
     public static void main(String[] args) {
-
+        SpringApplication.run(BinaryTreeApp.class, args);
     }
 }
