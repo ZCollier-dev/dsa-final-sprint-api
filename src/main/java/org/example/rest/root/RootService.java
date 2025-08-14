@@ -19,7 +19,7 @@ public class RootService {
 
     // Creates a new tree from a list of numbers - Basic BST
     public Root createTreeFromList(List<Double> numberList){
-        if (numberList.isEmpty() || numberList == null){
+        if (numberList == null || numberList.isEmpty()){
             return null;
         }
         int maxHeight = -1;
@@ -38,7 +38,7 @@ public class RootService {
 
     // Creates a new tree from a list of numbers - Balanced Tree, AVL
     public Root createBalancedTreeFromList(List<Double> numberList){
-        if (numberList.isEmpty() || numberList == null){
+        if (numberList == null || numberList.isEmpty()){
             return null;
         }
         int maxHeight = -1;
